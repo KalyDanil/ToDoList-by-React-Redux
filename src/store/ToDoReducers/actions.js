@@ -1,0 +1,10 @@
+export const INPUT = "INPUT";
+export const SUBMIT = "SUBMIT";
+export const ENDEDITING = "ENDEDITING";
+export const CHECKBOX = "CHECKBOX";
+export const CHECKALL = "CHECKALL";
+export const REMOVE = "REMOVE";
+export const CLEAR = "CLEAR";
+export const HIDEREMOVEBUTTON = "HIDEREMOVEBUTTON";
+export const SHOWREMOVEBUTTON = "SHOWREMOVEBUTTON";
+export const SELECTBUTTON = "SELECTBUTTON";

@@ -1,6 +1,6 @@
 import {
     INPUT, ENDEDITING, SUBMIT, CHECKBOX, CHECKALL, REMOVE, SELECTBUTTON, CLEAR, 
-} from "../store/ToDoReducers/actions";
+} from "./actions.js";
 
 const InitialState = {
     todoIsStarted: false,
@@ -21,7 +21,7 @@ const toDoReducer=(state=InitialState, action)=>{
                 activity: action.activity, someIsChecked: action.someIsChecked};
 
         case INPUT:
-            return {...state, task: {text: action.value, key: new Date(), isCompleted: false, checked: false, isEditing: false}};    
+            return {...state, task: {text: action.value, key: new Date(), isCompleted: false, checked: false, isEditing: false}};   
 
         case ENDEDITING:
             return {...state, tasks: action.tasks}
