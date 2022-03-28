@@ -25,11 +25,11 @@ class BotLine0 extends React.Component {
 }
 
 const mapStateToProps=(state)=>({
-    todoIsStarted: state.todoIsStarted,
-    tasks: state.tasks,
-    doneTasks: state.doneTasks,
-    selectedButton: state.selectedButton,
-    someIsChecked: state.someIsChecked
+    todoIsStarted: state.todo.todoIsStarted,
+    tasks: state.todo.tasks,
+    doneTasks: state.todo.doneTasks,
+    selectedButton: state.todo.selectedButton,
+    someIsChecked: state.todo.someIsChecked
 })
 
 const BotLine=connect(

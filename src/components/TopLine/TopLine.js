@@ -21,11 +21,11 @@ class TopLine0 extends React.Component {
 }
 
 const mapStateToProps=(state)=>({
-    todoIsStarted: state.todoIsStarted,
-    tasks: state.tasks,
-    activity: state.activity,
-    doneTasks: state.doneTasks,
-    someIsChecked: state.someIsChecked
+    todoIsStarted: state.todo.todoIsStarted,
+    tasks: state.todo.tasks,
+    activity: state.todo.activity,
+    doneTasks: state.todo.doneTasks,
+    someIsChecked: state.todo.someIsChecked
 });
 
 const TopLine=connect(

@@ -200,15 +200,15 @@ class ToDo extends React.Component {
 }
 
 const mapStateToProps=(state)=>({
-    todoIsStarted: state.todoIsStarted,
-    task: state.task,
-    tasks: state.tasks,
-    activity: state.activity,
-    doneTasks: state.doneTasks,
-    editingTask: state.editingTask,
-    someIsChecked: state.someIsChecked,
-    selectedButton: state.selectedButton,
-    someIsChecked: state.someIsChecked
+    todoIsStarted: state.todo.todoIsStarted,
+    task: state.todo.task,
+    tasks: state.todo.tasks,
+    activity: state.todo.activity,
+    doneTasks: state.todo.doneTasks,
+    editingTask: state.todo.editingTask,
+    someIsChecked: state.todo.someIsChecked,
+    selectedButton: state.todo.selectedButton,
+    someIsChecked: state.todo.someIsChecked
 })
  
 const mapDispatchToProps=(dispatch)=>({

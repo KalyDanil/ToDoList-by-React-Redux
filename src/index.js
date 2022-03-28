@@ -9,6 +9,7 @@ import store from './store/index'
 // import rootReducer from './store/reducers'
 
 // const store = createStore (toDoReducer);
+// "start": "react-scripts start",
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
@@ -17,4 +18,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-

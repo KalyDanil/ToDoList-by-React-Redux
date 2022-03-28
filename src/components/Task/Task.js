@@ -8,6 +8,7 @@ class Task0 extends React.Component {
     constructor(props) {
         super(props);
         this.state = {hidden: true, type: "button", editingTask: "", isEditing: false};
+        this.inputRef = React.createRef();
     }
 
     showRemoveButton = () => {
@@ -23,6 +24,10 @@ class Task0 extends React.Component {
         this.setState({editingTask: task.text});
         this.setState({type: "text"});
         this.setState({isEditing: true});
+    }
+
+    focus = () => {
+        this.inputRef.current.focus();
     }
 
     input = (e) => {
@@ -59,7 +64,7 @@ class Task0 extends React.Component {
         return (
             <StyledContainer isCompleted={task.isCompleted} buttonIsHidden={this.state.hidden}  isEditing={this.state.isEditing} onMouseLeave={this.hideRemoveButton}>
                 <input className="task__checkbox" type="checkbox" onChange={() => change(task)} checked={task.checked}/>
-                <input className="task__edit" type={this.state.type} value={this.state.editingTask} onBlur={() => this.onBlur(task)} onInput={this.input} onKeyUp={(e) => this.send(task, e)}/>
+                <input className="task__edit" ref={this.inputRef} type={this.state.type} value={this.state.editingTask} onMouseEnter={this.focus} onBlur={() => this.onBlur(task)} onInput={this.input} onKeyUp={(e) => this.send(task, e)}/>
                 <span className="task__text" onMouseOver={this.showRemoveButton} onDoubleClick={() => this.startEdit(task)}>
                     {task.text}
                 </span>
@@ -71,7 +76,7 @@ class Task0 extends React.Component {
 }
 
 const mapStateToProps=(state)=>({
-    tasks: state.tasks
+    tasks: state.todo.tasks
 })
 
 const mapDispatchToProps=(dispatch)=>({
